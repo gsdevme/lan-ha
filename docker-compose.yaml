@@ -15,12 +15,12 @@ services:
     # Using network_mode=host is the best situation for performance to prevent a NAT
     # however for MacOS using port-forward is the only option which is useful
     # when debugging/testing is kept it commented out
-#    network_mode: "host"
-    ports:
-      - "8080:8080"
-      - "6443:6443"
-      - "80:80"
-      - "443:443"
+    network_mode: "host"
+#    ports:
+#      - "8080:8080"
+#      - "6443:6443"
+#      - "80:80"
+#      - "443:443"
   keepalived:
     container_name: keepalived
     depends_on:
