@@ -11,7 +11,6 @@ services:
       interval: 15s
       timeout: 3s
       retries: 10
-    user: haproxy
     # Using network_mode=host is the best situation for performance to prevent a NAT
     # however for MacOS using port-forward is the only option which is useful
     # when debugging/testing is kept it commented out
