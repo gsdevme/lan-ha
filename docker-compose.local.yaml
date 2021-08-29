@@ -1,0 +1,6 @@
+version: '2.4'
+
+services:
+  keepalived:
+    volumes:
+      - ./etc/haproxy/:/usr/local/etc/haproxy

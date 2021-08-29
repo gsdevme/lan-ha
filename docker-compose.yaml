@@ -1,0 +1,27 @@
+version: '2.4'
+
+services:
+  haproxy:
+    image: haproxy:lts-alpine
+    mem_limit: 256m
+    restart: on-failure
+    container_name: haproxy
+    user: haproxy
+    # Using network_mode=host is the best situation for performance to prevent a NAT
+    # however for MacOS using port-forward is the only option which is useful
+    # when debugging/testing is kept it commented out
+#    network_mode: "host"
+    ports:
+      - "8080:8080"
+      - "6443:6443"
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./etc/haproxy/:/usr/local/etc/haproxy
+  keepalived:
+    image: alpine-keepalived:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.keepalived
+    sysctls:
+      net.ipv4.ip_nonlocal_bind: 1
