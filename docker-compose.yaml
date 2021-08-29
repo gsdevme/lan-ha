@@ -15,6 +15,7 @@ services:
     network_mode: host
   keepalived:
     container_name: keepalived
+    image: gsdevme/lan-ha:latest
     mem_limit: 32m
     user: root
     restart: always
@@ -24,6 +25,3 @@ services:
     depends_on:
       haproxy:
         condition: service_healthy
-    build:
-      context: .
-      dockerfile: Dockerfile.keepalived
