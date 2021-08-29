@@ -5,14 +5,17 @@ services:
     image: haproxy:lts-alpine
     mem_limit: 256m
     restart: always
-    privileged: true
     container_name: haproxy
     healthcheck:
       test: [ "CMD", "echo", "-n", ">", "/dev/tcp/127.0.0.1/8080" ]
       interval: 15s
       timeout: 3s
       retries: 10
-    network_mode: host
+    ports:
+      - "80:8080"
+      - "443:8443"
+      - "6443:6443"
+      - "8081:8081"
   keepalived:
     container_name: keepalived
     image: gsdevme/lan-ha:latest
