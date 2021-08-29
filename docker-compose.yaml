@@ -23,6 +23,8 @@ services:
 #      - "443:443"
     # to bind to port 80/443 etc
     privileged: true
+    cap_add:
+      - NET_ADMIN
   keepalived:
     container_name: keepalived
     user: root
