@@ -7,4 +7,4 @@ services:
       - ./local/etc/haproxy/:/usr/local/etc/haproxy
   keepalived:
     volumes:
-      - ./local/etc/keepalived/master.conf:/etc/keepalived/keepalived.conf
+      - ${pwd}/local/etc/keepalived/master.conf:/etc/keepalived/keepalived.conf
