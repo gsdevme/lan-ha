@@ -1,6 +1,10 @@
 version: '2.4'
 
+# Edit these volume mounts to suite
 services:
+  haproxy:
+    volumes:
+      - ./examples/etc/haproxy/:/usr/local/etc/haproxy
   keepalived:
     volumes:
-      - ./etc/haproxy/:/usr/local/etc/haproxy
+      - ./examples/etc/keepalived/master.conf:/etc/keepalived/keepalived.conf
