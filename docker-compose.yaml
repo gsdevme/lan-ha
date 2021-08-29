@@ -21,6 +21,8 @@ services:
 #      - "6443:6443"
 #      - "80:80"
 #      - "443:443"
+    # to bind to port 80/443 etc
+    privileged: true
   keepalived:
     container_name: keepalived
     user: root
