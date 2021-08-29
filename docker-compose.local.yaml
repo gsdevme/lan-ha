@@ -6,5 +6,7 @@ services:
     volumes:
       - ./local/etc/haproxy/:/usr/local/etc/haproxy
   keepalived:
+    environment:
+      KEEPALIVE_STATE: master
     volumes:
-      - ${pwd}/local/etc/keepalived/master.conf:/etc/keepalived/keepalived.conf
+      - ./local/etc/keepalived/:/etc/keepalived
