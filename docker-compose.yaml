@@ -23,6 +23,9 @@ services:
 #      - "443:443"
   keepalived:
     container_name: keepalived
+    user: root
+    cap_add:
+      - NET_ADMIN
     depends_on:
       haproxy:
         condition: service_healthy
