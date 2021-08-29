@@ -1,5 +1,7 @@
 FROM alpine:3.14
 
+ENV KEEPALIVE_STATE=master
+
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
 RUN apk add --no-cache keepalived && \
