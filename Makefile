@@ -13,6 +13,12 @@ start:
 		-f docker-compose.local.yaml \
 		up -d
 
+restart:
+	docker-compose \
+		-f docker-compose.yaml \
+		-f docker-compose.local.yaml \
+		restart
+
 stop:
 	docker-compose \
 		-f docker-compose.yaml \
