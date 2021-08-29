@@ -5,6 +5,7 @@ services:
     image: haproxy:lts-alpine
     mem_limit: 256m
     restart: always
+    privileged: true
     container_name: haproxy
     healthcheck:
       test: [ "CMD", "echo", "-n", ">", "/dev/tcp/127.0.0.1/8080" ]
