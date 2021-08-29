@@ -3,6 +3,5 @@ FROM alpine:3.14
 RUN apk add --no-cache keepalived && \
     rm -rf /etc/keepalived/keepalived.conf
 
-USER nobody
-
-CMD ['keepalived', '-n', '-l', '-G']
+ENTRYPOINT '/bin/sh'
+CMD ['/usr/sbin/keepalived', '-n', '-l', '-G']

@@ -2,6 +2,15 @@
 
 Uses Keepalived and HAProxy to create high available services behind a NAT with a focus on that NAT being your local ISP router
 
+## How to use
+
+```bash
+cp examples local
+
+# edit configuration files to suite
+make start
+```
+
 ### Provides
 
 - Layer 4 Network Proxy (6443)

@@ -21,8 +21,6 @@ services:
       - "6443:6443"
       - "80:80"
       - "443:443"
-    volumes:
-      - ./etc/haproxy/:/usr/local/etc/haproxy
   keepalived:
     container_name: keepalived
     depends_on:
