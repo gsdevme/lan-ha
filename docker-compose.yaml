@@ -23,6 +23,7 @@ services:
     user: root
     restart: always
     network_mode: host
+    privileged: true
     cap_add:
       - NET_ADMIN
     depends_on:
