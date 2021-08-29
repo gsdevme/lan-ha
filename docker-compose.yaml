@@ -6,6 +6,11 @@ services:
     mem_limit: 256m
     restart: on-failure
     container_name: haproxy
+    healthcheck:
+      test: [ "CMD", "echo", "-n", ">", "/dev/tcp/127.0.0.1/8080" ]
+      interval: 15s
+      timeout: 3s
+      retries: 10
     user: haproxy
     # Using network_mode=host is the best situation for performance to prevent a NAT
     # however for MacOS using port-forward is the only option which is useful
@@ -19,7 +24,10 @@ services:
     volumes:
       - ./etc/haproxy/:/usr/local/etc/haproxy
   keepalived:
-    image: alpine-keepalived:latest
+    container_name: keepalived
+    depends_on:
+      haproxy:
+        condition: service_healthy
     build:
       context: .
       dockerfile: Dockerfile.keepalived
