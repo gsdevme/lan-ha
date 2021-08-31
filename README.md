@@ -21,7 +21,7 @@ make start
 | IP      | Description |
 | ----------- | ----------- |
 | 172.16.16.1      | Gateway/NAT       |
-| 172.16.16.70   | Virtual IP Address        |
+| 172.16.16.80   | Virtual IP Address        |
 | 172.16.16.71   | LB01        |
 | 172.16.16.72   | LB02        |
 | 172.16.16.81   | Kubernetes Node        |
