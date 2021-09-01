@@ -12,7 +12,7 @@ services:
       timeout: 3s
       retries: 10
     logging:
-        driver: "json-file"
+      driver: "json-file"
         options:
             max-file: 2
             max-size: 1m
