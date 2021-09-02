@@ -13,8 +13,8 @@ make start
 
 ### Provides
 
-- Layer 4 Network Proxy (6443)
-- Layer 7 Network Proxy (80/443)
+- Layer 4 Network Proxy (6443/443)
+- Layer 7 Network Proxy (80)
 
 ### IP Mapping
 
